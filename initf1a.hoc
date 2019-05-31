@@ -1,0 +1,26 @@
+load_file("nrngui.hoc")
+load_file("celpyr.ses")
+load_file("netpyr.ses")
+load_file("rigpyr.ses")
+
+objref vbox
+vbox = new VBox()
+vbox.intercept(1)	//all following creations go into the "vbox" box
+xpanel("Description and Instructions")
+xlabel("Synaptic depression at a synapse between layer V pyramidal cells.")
+xlabel("To run a simulation, click on Init & Run in the RunControl window (above).")
+xlabel("=============================")
+xlabel("What are all these windows?")
+xlabel("The NetReadyCellGUI window was used to specify a model 'pyramidal cell'")
+xlabel("that has a synaptic mechanism on it.  To see the parameters that affect")
+xlabel("synaptic plasticity, click on Info in the NetReadyCellGUI window and")
+xlabel("select the Synapse Types item.")
+xlabel("The ArtCellGUI window controls the timing and rate of firing of an")
+xlabel("'artificial neuron' whose sole purpose is to activate the synapse.")
+xlabel("The NetGUI window (under this one) specifies that an artificial neuron")
+xlabel("drives the synaptic mechanism on a pyramidal cell.")
+xlabel("For a tutorial on how to use these tools to create your own models,")
+xlabel("see the Documentation page at http://www.neuron.yale.edu/")
+xpanel()
+vbox.intercept(0)	//ends intercept mode 
+vbox.map("Description and Instructions", 400, 400, -1, 0)	//draw the box and its contents

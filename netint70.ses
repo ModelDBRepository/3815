@@ -1,0 +1,51 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[6]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin ArtCellGUI[0]
+{
+load_file("netbild.hoc")
+}
+ocbox_ = new ArtCellGUI(1)
+{object_push(ocbox_)}
+{
+tobj = new MechanismStandard("NetStim")
+tobj.set("interval", 14.286, 0)
+tobj.set("number", 20, 0)
+tobj.set("start", 100, 0)
+tobj.set("noise", 0, 0)
+}
+{append(tobj, "S70Hz")}
+{object_pop()}
+{
+ocbox_.map("ArtCellGUI[0]", 0, 478, 397.44, 278.4)
+}
+objref ocbox_
+//End ArtCellGUI[0]
+
+
+//Begin NetGUI[0]
+{
+load_file("netbild.hoc")
+}
+{ocbox_ = new NetGUI(1)}
+{object_push(ocbox_)}
+{mapold2new = new Vector()  missing = new List()}
+original_type("Int")
+original_type("S70Hz")
+newnode(0, -45, 73)
+newnode(1, -105, 74)
+newedge(1, 0, 0, 0.015, 1)
+{create_ = 1  create1()}
+{g.size(-167.085,167.085,-125.471,125.471)}
+{set_alias(0)}
+{object_pop()}
+{
+ocbox_.map("NetGUI[0]", 431, 401, 515.52, 325.44)
+}
+objref ocbox_
+//End NetGUI[0]
+
+objectvar scene_vector_[1]
+{doNotify()}
